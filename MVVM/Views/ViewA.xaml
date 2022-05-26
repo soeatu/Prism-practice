@@ -1,0 +1,9 @@
+﻿<UserControl x:Class="MVVM.Views.ViewA"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <Label Content="画面A" Foreground="#7FFF0000" Background="{x:Null}" FontSize="36"/>
+    </Grid>
+</UserControl>
