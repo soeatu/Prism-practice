@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MVVM.ViewModels;
 
 namespace MVVMTest.Tests
 {
@@ -8,6 +9,8 @@ namespace MVVMTest.Tests
         [TestMethod]
         public void TestMethod1()
         {
+            var vm = new ViewCViewModel();
+            vm.OKButtonExecute();
         }
     }
 }

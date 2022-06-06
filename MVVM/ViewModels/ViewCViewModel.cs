@@ -4,13 +4,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Prism.Services.Dialogs;
+using System.Windows;
 
 namespace MVVM.ViewModels
 {
     public class ViewCViewModel : BindableBase, IDialogAware
     {
-        public ViewCViewModel()
+        IDialogService _dialogService;
+        public ViewCViewModel(IDialogService dialogService)
         {
+            _dialogService = dialogService; 
             OKButton = new DelegateCommand(OKButtonExecute);
         }
         private string _viewCTextBox = "XXX";
@@ -44,6 +47,10 @@ namespace MVVM.ViewModels
        
         public void OKButtonExecute()
         {
+            //MessageBox.Show("Saveします");
+            var message = new DialogParameters();
+            message.Add(nameof(MessageBoxViewModel.Message),"Saveします。");
+            _dialogService.ShowDialog(nameof(MVVM.Views.MessageBoxView), message, null);
             var p = new DialogParameters();
             p.Add(nameof(ViewCTextBox), ViewCTextBox);
             RequestClose?.Invoke(new DialogResult(ButtonResult.OK,p));

@@ -21,6 +21,7 @@ namespace MVVM
             containerRegistry.RegisterForNavigation<ViewA>();
             containerRegistry.RegisterForNavigation<ViewB>();
             containerRegistry.RegisterDialog<ViewC, ViewCViewModel>();
+            containerRegistry.RegisterDialog<MessageBoxView, MessageBoxViewModel>();
         }
     }
 }
